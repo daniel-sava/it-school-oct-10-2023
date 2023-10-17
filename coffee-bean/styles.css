@@ -1,0 +1,154 @@
+:root {
+    --coffee-color-1: #ede0d4;
+    --coffee-color-2: #e6ccb2;
+    --coffee-color-3: #ddb892;
+    --coffee-color-4: #b08968;
+    --coffee-color-5: #7f5539;
+    --coffee-color-6: #9c6644;
+    --color-light: #fffefd;
+    --color-dark: #2d1a0e;
+}
+
+html {
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--color-dark);
+    font-family: "Nunito Sans", sans-serif;
+}
+
+@media screen and (max-width: 560px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+#header {
+    padding: 2rem 1rem;
+    background-color: var(--coffee-color-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .mobile-menu-toggle {
+    display: none;
+    font-size: 1.75rem;
+}
+
+#header .mobile-menu-toggle:hover {
+    cursor: pointer;
+}
+
+#header .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#header .logo-wrapper .logo {
+    max-width: 50px;
+}
+
+#header .logo-wrapper .name {
+    font-size: 1.75rem;
+}
+
+#header .navigation {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#header .navigation .link {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--color-light);
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+#header .navigation .link.button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-dark);
+    border-radius: 0.25rem;
+}
+
+#header .navigation .link:hover {
+    color: var(--color-dark);
+}
+
+#header .navigation .link.button:hover {
+    background-color: var(--coffee-color-3);
+}
+
+#products-list {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    border-radius: 0.5rem;
+    max-width: 18rem;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+}
+
+.product-image {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 850px) {
+    #header .navigation {
+        display: none;
+    }
+
+    #header .navigation.mobile-open {
+        display: flex;
+        position: absolute;
+        top: 114px;
+        left: 0;
+        animation-name: mobilemenu;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 100;
+        background-color: var(--coffee-color-4);
+    }
+
+    #header .mobile-menu-toggle {
+        display: block;
+    }
+}
+
+@keyframes mobilemenu {
+    from {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        left: 50%;
+        border-radius: 2rem;
+    }
+
+    to {
+        width: 100vw;
+        height: calc(100vh - 114px);
+        left: 0;
+        opacity: 1;
+        border-radius: 0;
+    }
+}
