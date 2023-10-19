@@ -7,10 +7,23 @@
     --coffee-color-6: #9c6644;
     --color-light: #fffefd;
     --color-dark: #2d1a0e;
+    --header-height: 98px;
 }
 
 html {
     font-size: 16px;
+}
+
+@media screen and (max-width: 1400px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 12px;
+    }
 }
 
 *,
@@ -98,6 +111,8 @@ body {
     gap: 1.5rem;
     padding: 2rem;
     flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .product-card {
@@ -119,7 +134,7 @@ body {
     #header .navigation.mobile-open {
         display: flex;
         position: absolute;
-        top: 114px;
+        top: var(--header-height);
         left: 0;
         animation-name: mobilemenu;
         animation-duration: 1.5s;
@@ -146,9 +161,66 @@ body {
 
     to {
         width: 100vw;
-        height: calc(100vh - 114px);
+        height: calc(100vh - var(--header-height));
         left: 0;
         opacity: 1;
         border-radius: 0;
     }
+}
+
+#hero {
+    position: relative;
+}
+
+#hero .hero-image {
+    max-width: 100%;
+}
+
+#hero .overlay {
+    position: absolute;
+    background: linear-gradient(
+        90deg,
+        rgba(176, 137, 104, 0.4),
+        rgba(176, 137, 104, 1)
+    );
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#hero .overlay .description-wrapper {
+    max-width: 40rem;
+    padding: 2rem;
+}
+
+#hero .overlay .description-wrapper .title {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    line-height: 3.2rem;
+}
+
+#hero .overlay .description-wrapper .description {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero .overlay .description-wrapper .cta-button {
+    display: block;
+    background-color: var(--color-dark);
+    color: var(--coffee-color-1);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
+}
+
+#hero .overlay .description-wrapper .cta-button:hover {
+    background-color: var(--coffee-color-3);
+    color: var(--color-dark);
 }
