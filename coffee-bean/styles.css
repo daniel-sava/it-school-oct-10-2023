@@ -82,11 +82,19 @@ body {
 }
 
 #header .navigation .link {
+    position: relative;
     font-size: 1.25rem;
     text-decoration: none;
     color: var(--color-light);
     font-weight: 700;
     transition: all 0.3s ease-in-out;
+}
+
+#header .navigation .link.cart span {
+    background-color: var(--color-dark);
+    color: var(--coffee-color-1);
+    padding: 0 0.5rem;
+    border-radius: 50%;
 }
 
 #header .navigation .link.button {
@@ -124,6 +132,21 @@ body {
 
 .product-image {
     max-width: 100%;
+}
+
+.product-add-to-cart-button {
+    display: block;
+    margin-top: 1rem;
+    background-color: var(--coffee-color-5);
+    color: var(--coffee-color-1);
+    font-size: 1.25rem;
+    border-radius: 0.25rem;
+    width: fit-content;
+    padding: 0.5rem 0.75rem;
+}
+
+.product-add-to-cart-button:hover {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 850px) {
