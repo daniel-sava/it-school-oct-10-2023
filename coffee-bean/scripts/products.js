@@ -141,7 +141,6 @@ function addProductToCart(productId) {
     }
 
     updateCartCounter();
-    console.log(cart);
 }
 
 function getProductDetails(productId) {
