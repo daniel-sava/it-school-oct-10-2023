@@ -1,0 +1,12 @@
+.card {
+    padding: 3rem;
+    background-color: #292929;
+}
+
+.title {
+    color: pink;
+}
+
+.description {
+    font-size: 14px;
+}
