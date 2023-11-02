@@ -1,0 +1,51 @@
+.productContainer {
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 0.5rem;
+    max-width: 320px;
+}
+
+.productImage {
+    width: 100%;
+    max-width: 100%;
+}
+
+.productPrice {
+    display: flex;
+    justify-content: space-between;
+}
+
+.productPrice span {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: white;
+}
+
+.productPrice .productInStock {
+    background-color: green;
+}
+
+.productPrice .productOutOfStock {
+    background-color: red;
+}
+
+.productAddToCart {
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    display: block;
+    width: fit-content;
+}
+
+.productNotification {
+    background-color: rgb(98, 0, 255);
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    display: block;
+    width: fit-content;
+}

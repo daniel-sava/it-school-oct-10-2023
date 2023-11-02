@@ -1,0 +1,11 @@
+.products-section {
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
