@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { NameContext } from "../contexts/name-context";
 import styles from "./Product.module.css";
 
 export default function Product(props) {
+    const { name, setName } = useContext(NameContext);
+
     return (
         <div className={styles.productContainer}>
             <img className={styles.productImage} src={props.productImage} />
@@ -9,7 +13,7 @@ export default function Product(props) {
                 {props.productDescription}
             </p>
             <p className={`${styles.productPrice}`}>
-                {props.productPrice} RON{" "}
+                {props.productPrice} RON , for you {name}
                 <span
                     className={
                         props.productQuantity

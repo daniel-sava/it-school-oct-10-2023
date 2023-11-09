@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
+import Name from "./components/Name";
 import Product from "./components/Product";
+import Todos from "./components/Todos";
+import NameContextProvider from "./contexts/name-context";
 
 function App() {
     const [currentProductName, setCurrentProductName] = useState("");
@@ -43,7 +46,8 @@ function App() {
     });
 
     return (
-        <>
+        <NameContextProvider>
+            <Name />
             <section>
                 <h2 className="title">Cele mai noi produse</h2>
                 {currentProductName ? (
@@ -70,7 +74,8 @@ function App() {
                         })}
                 </div>
             </section>
-        </>
+            <Todos />
+        </NameContextProvider>
     );
 }
 
